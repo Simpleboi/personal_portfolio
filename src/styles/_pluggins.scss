@@ -15,3 +15,11 @@ $yellow: #FFD700;
 $text-color: #333333;
 $light-gray: #757575;
 $light-text-color: #D3D3D3;
+
+
+// Helpful Mixins
+@mixin flexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

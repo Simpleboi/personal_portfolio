@@ -1,0 +1,47 @@
+@use "./pluggins" as p;
+
+nav {
+    // border: 1px solid red;
+    position: absolute;
+    right: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40vh;
+    flex-direction: column;
+
+    a {
+        text-decoration: none;
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    a:hover {
+        transition: all 0.25s ease;
+        transform: scale(1.05);
+    }
+
+    #projects:hover {
+        color: p.$green;
+    }
+
+    #skills:hover {
+        color: p.$white;
+    }
+
+    #resume:hover {
+        color: p.$orange;
+    }
+
+    #contact:hover {
+        color: p.$blue;
+    }
+
+    #home:hover {
+        color: p.$red;
+    }
+
+    #about-me:hover {
+        color: p.$yellow;
+    }
+}
