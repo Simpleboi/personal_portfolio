@@ -1,8 +1,9 @@
 @use "./pluggins" as p;
 
 .cube-controller {
-    border: 1px solid red;
     height: 100vh;
-    @include p.flexCenter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 

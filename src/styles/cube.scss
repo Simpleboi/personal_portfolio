@@ -28,6 +28,7 @@ body {
   transform: rotateX(-30deg) rotateY(45deg);
   position: relative;
   transform-origin: center;
+  transition: transform 1s ease;
 }
 
 .face {

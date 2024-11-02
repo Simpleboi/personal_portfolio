@@ -3,25 +3,16 @@ import React from "react";
 interface CubeFaceProps {
   face: string;
   color: string;
-  skillsVisible?: boolean;
 }
 
-const CubeFace: React.FC<CubeFaceProps> = ({
-  face,
-  color,
-  skillsVisible = false,
-}) => {
-  const isSkillsFace = face === "top";
-
+const CubeFace: React.FC<CubeFaceProps> = ({ face, color }) => {
   return (
     <div className={`face ${face}`} id={color}>
       {[...Array(9)].map((_, index) => (
         <div
-          className={`square ${isSkillsFace ? "square-content" : ""}`}
+          className="square"
           key={index}
-          style={
-            isSkillsFace && skillsVisible ? { opacity: 1 } : { opacity: 0 }
-          }
+          style={{ opacity: 1 }} // Set opacity to 1 to ensure the grid is always visible
         ></div>
       ))}
     </div>
