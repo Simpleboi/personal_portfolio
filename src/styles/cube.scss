@@ -12,13 +12,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
 }
 
 .cube-wrapper {
   width: 200px;
   height: 200px;
-  transition: transform 1s;
+  transition: transform 0.75s;
+  position: fixed;
+  z-index: 10;
 }
 
 .cube {
@@ -28,7 +29,7 @@ body {
   transform: rotateX(-30deg) rotateY(45deg);
   position: relative;
   transform-origin: center;
-  transition: transform 1s ease;
+  transition: transform 0.75s ease;
 }
 
 .face {

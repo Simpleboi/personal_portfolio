@@ -1,4 +1,5 @@
 import React from "react";
+import SkillsGrid from "../components/skillsGrid.tsx";
 
 interface CubeFaceProps {
   face: string;
@@ -8,13 +9,13 @@ interface CubeFaceProps {
 const CubeFace: React.FC<CubeFaceProps> = ({ face, color }) => {
   return (
     <div className={`face ${face}`} id={color}>
-      {[...Array(9)].map((_, index) => (
-        <div
-          className="square"
-          key={index}
-          style={{ opacity: 1 }} // Set opacity to 1 to ensure the grid is always visible
-        ></div>
-      ))}
+      {face === "top" ? (
+        <SkillsGrid />
+      ) : (
+        [...Array(9)].map((_, index) => (
+          <div className="square" key={index}></div>
+        ))
+      )}
     </div>
   );
 };

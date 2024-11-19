@@ -9,11 +9,11 @@ const CubeController: React.FC = () => {
     "rotateX(-30deg) rotateY(45deg)"
   );
   const [scale, setScale] = useState<string>("scale(1)");
-  const [skillsVisible, setSkillsVisible] = useState<boolean>(false);
-
   // Handle navigation clicks to rotate the cube
   const handleNavClick = (section: string) => {
     setScale("scale(1.5)");
+
+
     switch (section) {
       case "home":
         setTransform("rotateY(0deg)");
@@ -21,19 +21,23 @@ const CubeController: React.FC = () => {
         break;
       case "projects":
         setTransform("rotateY(-90deg)");
+        document.getElementById("projects-section")?.scrollIntoView({ behavior: "smooth" });
         break;
       case "about-me":
         setTransform("rotateY(90deg)");
+        document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" });
         break;
       case "skills":
         setTransform("rotateX(-90deg)");
-        setSkillsVisible(true);
+        document.getElementById("skills-section")?.scrollIntoView({ behavior: "smooth" });
         break;
       case "resume":
         setTransform("rotateX(90deg)");
+        document.getElementById("resume-section")?.scrollIntoView({ behavior: "smooth" });
         break;
       case "contact":
         setTransform("rotateY(180deg)");
+        document.getElementById("contact-section")?.scrollIntoView({ behavior: "smooth" });
         break;
       default:
         setTransform("rotateX(-30deg) rotateY(45deg)");
@@ -44,7 +48,6 @@ const CubeController: React.FC = () => {
   const resetCube = () => {
     setScale("scale(1)");
     setTransform("rotateX(-30deg) rotateY(45deg)");
-    setSkillsVisible(false);
   };
 
   return (
@@ -52,7 +55,7 @@ const CubeController: React.FC = () => {
       <Header resetCube={resetCube} />
       <Nav handleNavClick={handleNavClick} />
       <div className="cube-wrapper" style={{ transform: scale }}>
-        <Cube transform={transform} skillsVisible={skillsVisible} />
+        <Cube transform={transform}/>
       </div>
     </div>
   );
